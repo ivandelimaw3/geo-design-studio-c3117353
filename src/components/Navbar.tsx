@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Search, User, Menu, X } from "lucide-react";
+import { Search, User, Menu, X, LogOut } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 import logo from "@/assets/logo.png";
@@ -37,12 +37,21 @@ const Navbar = () => {
 
           {/* Right side */}
           <div className="hidden md:flex items-center gap-4">
-            <div className="flex items-center gap-2 text-sm cursor-pointer" onClick={() => navigate("/cadastro")}>
+            <div className="flex items-center gap-2 text-sm">
               <User className="w-5 h-5 text-muted-foreground" />
-              <div>
+              <div className="cursor-pointer" onClick={() => navigate("/cadastro")}>
                 <p className="font-semibold text-foreground leading-tight">Seja Bem Vindo</p>
-                <p className="text-primary text-xs hover:underline">alterar cadastro</p>
+                <p className="text-primary text-xs hover:underline">Cadastro</p>
               </div>
+              <button
+                type="button"
+                onClick={() => { /* logout placeholder */ }}
+                aria-label="Sair"
+                title="Sair"
+                className="ml-1 p-1.5 rounded-md hover:bg-secondary transition-colors"
+              >
+                <LogOut className="w-4 h-4 text-muted-foreground" />
+              </button>
             </div>
             <Button onClick={() => navigate("/orcamento")} className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-6">
               Orçamento
