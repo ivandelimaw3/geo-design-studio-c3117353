@@ -84,9 +84,28 @@ const Orcamento = () => {
               <Label htmlFor="descricao">Descrição do Serviço / Observações</Label>
               <Textarea name="descricao" value={form.descricao} onChange={handleChange} placeholder="Descreva o que você precisa..." rows={4} />
             </div>
-            <div className="md:col-span-2 flex gap-4 mt-4">
-              <Button type="submit" className="flex-1 bg-primary text-primary-foreground font-semibold">Enviar Solicitação</Button>
-              <Button type="button" variant="outline" onClick={() => navigate("/")} className="flex-1">Voltar</Button>
+            <div className="md:col-span-2 flex flex-col sm:flex-row gap-4 mt-4">
+              <Button type="submit" className="flex-1 bg-primary text-primary-foreground font-semibold">Cadastrar Orçamento</Button>
+              <Button
+                type="button"
+                variant="outline"
+                onClick={() => {
+                  if (!form.nome || !form.telefone) {
+                    toast({ title: "Preencha os campos obrigatórios para alterar", variant: "destructive" });
+                    return;
+                  }
+                  toast({ title: "Orçamento alterado com sucesso!" });
+                  navigate("/");
+                }}
+                className="flex-1 font-semibold"
+              >
+                Alterar Orçamento
+              </Button>
+            </div>
+            <div className="md:col-span-2 text-center mt-2">
+              <button type="button" onClick={() => navigate("/")} className="text-primary text-sm hover:underline">
+                ← Voltar ao site
+              </button>
             </div>
           </form>
         </div>
