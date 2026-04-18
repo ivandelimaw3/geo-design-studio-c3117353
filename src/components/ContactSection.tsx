@@ -14,6 +14,7 @@ const ContactSection = () => (
           <div className="space-y-6">
             {[
               { icon: Phone, label: "+55 19 99630-9627" },
+              { icon: Phone, label: "+55 19 98977-6474" },
               { icon: Mail, label: "contato@w3geo.com.br" },
               { icon: MapPin, label: "Indaiatuba - SP, Brasil" },
             ].map((item) => (
