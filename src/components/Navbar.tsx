@@ -45,7 +45,7 @@ const Navbar = () => {
               </div>
               <button
                 type="button"
-                onClick={() => { /* logout placeholder */ }}
+                onClick={() => { window.close(); }}
                 aria-label="Sair"
                 title="Sair"
                 className="ml-1 p-1.5 rounded-md hover:bg-secondary transition-colors"
